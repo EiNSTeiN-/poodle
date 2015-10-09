@@ -59,7 +59,7 @@ indicating a decryption failure (error), or continued as normal (success).
 This all has to be done before the call to `trigger()` returns. Provided these
 conditions are met, the `POODLE` class will handle the rest.
 
-More Ressources
+More Resources
 ---------------
 1. https://www.openssl.org/~bodo/ssl-poodle.pdf
 2. http://googleonlinesecurity.blogspot.ca/2014/10/this-poodle-bites-exploiting-ssl-30.html
